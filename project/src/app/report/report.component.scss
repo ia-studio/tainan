@@ -1,0 +1,146 @@
+@import "../../assets/styles/_var.scss";
+.header-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 676px;
+  height: 350px;
+  margin: auto;
+  color: $dk-brown;
+  @media screen and (max-width: 480px) {
+    top: 150px;
+    width: 90vw;
+    height: auto;
+    overflow: hidden;
+
+
+  }
+}
+.header-content {
+  .header-content-bg {
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    width: 350px;
+    height: 266px;
+    border: 10px solid #fff;
+    background-image: url("/assets/images/index/big-header.png");
+    background-position: center;
+    @media screen and (max-width: 480px) {
+      width: 100%;
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,.8);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .header-content-info {
+    position: relative;
+    display: inline-block;
+    width: 350px;
+    z-index: 3;
+    padding: 55px 25px;
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      padding-top: 40px;
+      padding-bottom: 0;
+    }
+    &:after {
+      content: "";
+      width: 7px;
+      height: 35px;
+      background: $second;
+      position: absolute;
+      right: -7px;
+      bottom: 85px;
+      @media screen and (max-width: 480px) {
+        display: none;
+      }
+    }
+    &:before {
+      content: "";
+      width: 35px;
+      height: 7px;
+      background: $second;
+      position: absolute;
+      right: -6px;
+      bottom: 85px;
+      @media screen and (max-width: 480px) {
+        display: none;
+      }
+    }
+  }
+  .header-content-qick {
+    display: inline-block;
+    position: relative;
+    top: 45px;
+    margin-left: -33px;
+    width: 326px;
+    height: 305px;
+    background: #F8F8F8;
+    border-radius: 0 0 3px 3px;
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      margin-left: 0;
+      top: 24px;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      width: 196px;
+      height: 3px;
+      background: $primary;
+      box-shadow: 70px 0 0 0 $dk-brown, 130px 0 0 0 $second;
+    }
+  }
+  .qick-list{
+    list-style: none;
+    margin: 20px;
+    @media screen and (max-width: 480px) {
+      padding-left: 0;
+    }
+    &>li {
+      font-size: 20px;
+      padding: 8px;
+      border-bottom: 1px solid #D8D8D8;
+      &:last-child {
+        border-color: transparent;
+      }
+
+    }
+    a{
+      color: $dk-brown;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  .line {
+    width: 50px;
+    height: 3px;
+    background: #000;
+    margin: 17px auto;
+  }
+  .btn-orange {
+    margin: 50px auto 0;
+    text-shadow: none;
+    height: 60px;
+    width: 250px;
+    box-shadow: 0 -4px 0 rgba(0,0,0, .2) inset;
+    line-height: 60px;
+
+    @media screen and (max-width: 480px) {
+      width: 80%;
+      margin-top: 20px;
+    }
+
+  }
+}

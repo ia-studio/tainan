@@ -1,0 +1,82 @@
+<div *ngIf="!selectedCaseType || !selectedSubCaseType">
+  <div class="index-header">
+    <div class="big-header big-header--back"></div>
+    <div class="big-header container hidden-xs">
+    </div>
+    <div class="header-content animated ">
+        <div class="header-content-bg"></div>
+        <div class="header-content-info">
+            <p class="text-center font-2xl">歡迎進入<br>線上即時服務平台</p>
+            <div class="line"></div>
+            <p class="text-center">平台提供陳情、檢舉、投訴等服務</p>
+            <a href="javascript:void(0);" (click)="scrollTo('mayor')" class="btn btn-orange page-scroll">市 長 信 箱</a>
+        </div>
+        <div class="header-content-qick">
+          <ul class="qick-list">
+            <li><a href="javascript:void(0)">違規停車</a></li>
+            <li><a href="javascript:void(0)">違規小廣告</a></li>
+            <li><a href="javascript:void(0)">號誌故障</a></li>
+            <li><a href="javascript:void(0)">路燈不亮</a></li>
+            <li><a href="javascript:void(0)">溝蓋破損</a></li>
+            <li><a href="javascript:void(0)">道路凹陷坑洞</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="container shadow-3d">
+      <div class="out-conatainer row">
+        <div class="article-header text-center">
+          <h1 id="mayor" class="article-title">市長信箱</h1>
+        </div>
+      </div>
+      <div class="row pdLR1x body-content" *ngIf="caseTypes.length > 0">
+        <div class="col-md-4">
+          <div class="case-type" *ngFor="let type of caseTypes | slice:0:7" (click)="type.active=!type.active" [ngClass]="{active:type.active}">
+            <p class="case-type-name"><span class="case-type-num">
+                        {{ type.Item }} ·</span> {{type.ItemName}}
+              <span class="case-open pull-right"><i class="fa fa-chevron-down"></i></span>
+            </p>
+            <div class="clearfix"></div>
+            <ul class="case-list" *ngIf="type.Subitems">
+              <li class="case-item" *ngFor="let item of type.Subitems"><a (click)="onSelected(type.Item,item.Subitem)">{{item.SubitemName}}</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="case-type" *ngFor="let type of caseTypes | slice:7:14" (click)="type.active=!type.active" [ngClass]="{active:type.active}">
+            <p class="case-type-name"><span class="case-type-num">
+                        {{ type.Item }} ·</span> {{type.ItemName}}
+              <span class="case-open pull-right"><i class="fa fa-chevron-down"></i></span>
+            </p>
+            <div class="clearfix"></div>
+            <ul class="case-list" *ngIf="type.Subitems">
+              <li class="case-item" *ngFor="let item of type.Subitems"><a (click)="onSelected(type.Item,item.Subitem)">{{item.SubitemName}}</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="case-type" *ngFor="let type of caseTypes | slice:14:21" (click)="type.active=!type.active" [ngClass]="{active:type.active}">
+            <p class="case-type-name"><span class="case-type-num">
+                        {{ type.Item }} ·</span> {{type.ItemName}}
+              <span class="case-open pull-right"><i class="fa fa-chevron-down"></i></span>
+            </p>
+            <div class="clearfix"></div>
+            <ul class="case-list" *ngIf="type.Subitems">
+              <li class="case-item" *ngFor="let item of type.Subitems"><a (click)="onSelected(type.Item,item.Subitem)">{{item.SubitemName}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="pop pop-inner" style="display:block;" *ngIf="caseTypes.length == 0">
+        <div class="pop-content">
+          <div class="mk-spinner-doublecircle"></div>
+          <span class="loading-words">Loading ...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="selectedCaseType && selectedSubCaseType">
+  <app-report-detail [caseType]="selectedCaseType" [subCaseType]="selectedSubCaseType" (closeReport)="closeReport()"></app-report-detail>
+</div>
