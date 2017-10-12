@@ -1007,7 +1007,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var NewsService = (function () {
     function NewsService(http) {
         this.http = http;
-        this.newsListUrl = 'http://soweb.kcg.gov.tw/webapi/api/bulletin';
+        this.newsListUrl = 'https://soweb.kcg.gov.tw/webapi/api/bulletin';
     }
     NewsService.prototype.getNews = function () {
         return this.http.get(this.newsListUrl)
@@ -2968,7 +2968,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ReportService = (function () {
     function ReportService(http) {
         this.http = http;
-        this.baseApiUrl = 'http://soweb.kcg.gov.tw/webapi/api/'; //;
+        this.baseApiUrl = 'https://soweb.kcg.gov.tw/webapi/api/'; //;
         this.reportTypesUrl = this.baseApiUrl + 'items/';
         this.validationCodeUrl = this.baseApiUrl + 'ValidationCode/'; //'../../assets/vd.json';
     }
