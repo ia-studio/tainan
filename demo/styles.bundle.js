@@ -45,14 +45,14 @@ module.exports = __webpack_require__.p + "fontawesome-webfont.fee66e712a8a08eef5
 /***/ "../../../../../src/assets/images/index/big-header-blur.png":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "big-header-blur.d34ca2f581abc5259ef0.png";
+module.exports = __webpack_require__.p + "big-header-blur.0b9223caa9abf4272cce.png";
 
 /***/ }),
 
 /***/ "../../../../../src/assets/images/index/big-header.png":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "big-header.fd319372550a324e6215.png";
+module.exports = __webpack_require__.p + "big-header.89c93a7b53de92c543af.png";
 
 /***/ }),
 
