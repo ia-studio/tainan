@@ -62,7 +62,7 @@ export class QuestionComponent implements OnInit {
         {
           ReplyLevel: arrName.ReplyLevel,
           ReplyID: arrName.ReplyID,
-          ReplyContent: arrName.OptionComment? arrName.OptionComment: ''
+          ReplyContent: arrName.OptionComment? arrName.OptionComment:null
         }
       );
       this.BeSelect.push(arrName) //for debug

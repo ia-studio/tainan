@@ -39,18 +39,9 @@
 }
 .article-lable {
   position: relative;
-  color: #797C83;
-  padding-left: 10px
+  color: $dk-brown;
 }
-.article-lable:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 5%;
-  height: 90%;
-  width: 1px;
-  background-color: #797C83
-}
+
 .article-content {
   font-size: 16px;
 }
@@ -59,7 +50,8 @@
   line-height: 1.75em
 }
 .article-content p {
-  text-align: justify
+  text-align: justify;
+  font-size: 1.05em;
 }
 @media screen and (max-width: 768px) {
   .article-header:before {
@@ -74,17 +66,17 @@ input {
   border: none;
   padding-bottom: 4px;
   border-bottom: 1px solid #ddd;
-  font-size: 1.125em;
+  font-size: 1.5em;
   background-color: transparent;
   transition: border-color .5s
 }
 input:focus {
   outline: transparent;
-  border-color: #345
+  border-color: $second
 }
 .fall-width {
   padding-top: 15px;
-  width: 100%
+  width: 100%;
 }
 textarea {
   border: 1px solid #ddd
@@ -213,13 +205,18 @@ textarea {
   text-decoration: none
 }
 .btn.btn-orange {
-  background-color: $primary
+  background-color: $primary;
+  padding-bottom: 15px;
+  box-shadow: 0 -4px rgba(0,0,0,.2) inset;
 }
 .btn.btn-grey {
-  background-color: #DEDEDE
+  background-color: #DEDEDE;
+  padding-bottom: 15px;
+  box-shadow: 0 -4px rgba(0,0,0,.2) inset;
+
 }
 .btn.btn-green {
-  background: linear-gradient(-45deg, rgba(128, 203, 196, 0.83) 0%, rgba(84, 162, 178, 0.83) 100%)
+  background: $primary;
 }
 .btn.btn-reset {
   display: inline-block;
@@ -305,13 +302,28 @@ a:focus {
   width: 100%;
   background-color: #fff
 }
-.banner {
-
+.page-title{
+  color: white;
   position: relative;
-  top: 28px;
+  font-size: 54px;
+  &:after{
+    content: "";
+    height: 15px;
+    width: 90%;
+    background: $second;
+  }
+}
+/*banner*/
+.banner {
+  position: relative;
   height: 150px;
   margin-bottom: 75px;
   padding-top: 30px;
+  background-image: url("assets/images/index/big-header.png");
+  background-size: cover;
+  @media screen and (max-width: 480px) {
+    top: 60px;
+  }
 }
 .banner:after {
   position: absolute;
@@ -330,18 +342,43 @@ a:focus {
   position: absolute;
   z-index: 2;
   right: 2vw;
-  bottom: -15px
-}
-@media screen and (max-width: 480px) {
-  .banner img {
-      width: 100px;
-      bottom: -10px
+  bottom: -15px;
+  @media screen and (max-width: 480px) {
+    width: 100px;
+    bottom: -10px
   }
 }
 .banner-page-name {
   position: absolute;
-  left: 2vw;
-  bottom: 20px
+  left: 5vw;
+  bottom: 50px;
+  p {
+    margin-bottom: 0;
+    margin-left: 5px;
+    color: white;
+    z-index: 2;
+  }
+  .page-title {
+    position: relative;
+    width: 100%;
+    padding-right: 10px;
+    margin-top: 10px;
+    z-index: 2;
+    text-align: center;
+    font-size: 54px;
+    color: white;
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      bottom: 0;
+      height: 15px;
+      width: 110%;
+      background: #F0BE53;
+
+    }
+  }
 }
 .shadow-3d {
   position: relative
@@ -493,15 +530,7 @@ footer {
   .body-content {
       padding-bottom: 40px
   }
-  .banner {
-      top: 28px;
-  }
 
-}
-@media screen and (max-width: 480px) {
-  .banner {
-      top: 58px
-  }
 }
 
 
@@ -800,83 +829,7 @@ footer {
 
 }
 
-.pop {
-  display: none;
-  position: fixed;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.95)
-}
-.pop .pop-content {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  max-width: 320px;
-  transform: translate(-50%)
-}
-.pop.active {
-  display: block
-}
-.pop.pop-inner {
-  position: relative;
-  width: 100%;
-  height: 400px
-}
-.check {
-  width: 290px;
-  background-color: #fff;
-  box-shadow: 0 2px 3px #ccc;
-  border-radius: 6px;
-  margin-left: 15px;
-  margin-top: -175px
-}
-.check .check-mark {
-  position: absolute;
-  border-radius: 50%;
-  width: 74px;
-  height: 74px;
-  left: 110px;
-  top: -37px;
-  box-shadow: 0 2px 5px #ccc;
-  font-size: 3em;
-  color: #80CBC4;
-  text-align: center;
-  line-height: 78px;
-  background-color: #fff
-}
-.check .check-mark:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-top: 5px;
-  margin-left: 5px;
-  height: 64px;
-  width: 64px;
-  border-radius: 50%;
-  border: 1px solid #80CBC4
-}
-.check .check-panel {
-  position: relative;
-  padding: 47px 15px 47px 15px
-}
-.check .check-info {
-  text-align: justify
-}
-.check .check-footer {
-  font-size: 1em
-}
-.check .btn-green {
-  position: absolute;
-  left: 10%;
-  bottom: -25px;
-  display: block;
-  width: 80%;
-  background: linear-gradient(-45deg, #80cbc4 0%, #54a2b2 100%)
-}
+
 .type-list {
   list-style: none;
   margin-top: 34px;

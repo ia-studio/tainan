@@ -33,8 +33,6 @@
   right: 60px;
   @media screen and (max-width: 480px) {
     display: block;
-  }
-  @media screen and (max-width: 480px) {
     top: 0px;
   }
   &.active .fa {
@@ -61,6 +59,7 @@
   padding-top: 30px;
   overflow: auto;
   background: #f8f8f8;
+  transition: z-index .5 .5;
   @media screen and (max-width: 1024px) {
     width: 30%;
     display: block;
@@ -68,6 +67,9 @@
   @media screen and (max-width: 480px) {
     width: 80%;
   }
+  }
+  .active {
+    z-index: 1;
   }
   .m-list {
     list-style: none;

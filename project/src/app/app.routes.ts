@@ -23,10 +23,10 @@ const appRoutes: Routes = [
     path: 'report',
     component: ReportComponent
   },
-  // {
-  //   path: 'report/:id/:subId',
-  //   component: ReportDetailComponent
-  // },
+  {
+    path: 'report/:id/:subId',
+    component: ReportDetailComponent
+  },
   // {
   //   path: 'query',
   //   component: QueryComponent
