@@ -103,7 +103,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .info-separate {
-      padding-top: 50px !important
+      padding-top: 50px !important;
   }
 }
 .block-separate {
@@ -117,7 +117,7 @@ textarea {
   width: 1px;
   height: 200px;
   max-height: 80%;
-  background-color: #ddd
+  background-color: #B7851C
 }
 @media screen and (max-width: 768px) {
   .block-separate:before {
@@ -184,6 +184,10 @@ textarea {
 }
 .pdT1x {
   padding-top: 15px
+}
+.pdY-5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .pdLR1x {
   padding: 0 15px

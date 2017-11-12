@@ -9,7 +9,8 @@ import { QueryService, RecaptchaCode } from './query.service';
 @Component({
   selector: 'app-query',
   templateUrl: 'query.component.html',
-  providers: [QueryService]
+  providers: [QueryService],
+  styleUrls:['query.component.scss']
 })
 export class QueryComponent implements OnInit, OnDestroy {
   public constructor(
