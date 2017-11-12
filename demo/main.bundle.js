@@ -1436,8 +1436,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var QueryService = (function () {
     function QueryService(_http) {
         this._http = _http;
-        this._base_api_url = 'http://soweb.kcg.gov.tw/webapi/api/case/';
-        this.validationCodeUrl = 'http://soweb.kcg.gov.tw/webapi/api/ValidationCode/'; //'../../assets/vd.json';
+        this._base_api_url = 'https://soweb.kcg.gov.tw/webapi/api/case/';
+        this.validationCodeUrl = 'https://soweb.kcg.gov.tw/webapi/api/ValidationCode/'; //'../../assets/vd.json';
         //
     }
     //市長信箱
