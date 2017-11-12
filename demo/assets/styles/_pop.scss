@@ -1,0 +1,24 @@
+.check {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 3px #ccc;
+  border-radius: 6px;
+}
+.check .check-panel {
+  position: relative;
+  padding: 47px 15px 47px 15px
+}
+.check .check-info {
+  text-align: justify
+}
+.check .check-footer {
+  font-size: 1em
+}
+.check .btn-green {
+  position: absolute;
+  left: 10%;
+  bottom: -25px;
+  display: block;
+  width: 80%;
+  background: linear-gradient(-45deg, #80cbc4 0%, #54a2b2 100%)
+}
