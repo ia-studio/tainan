@@ -22,6 +22,7 @@ import { QuestionComponent } from './question/question.component';
 
 import { environment } from '../environments/environment';
 import { AgmCoreModule } from '@agm/core';
+import { SitemapComponent } from './sitemap/sitemap.component';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import { AgmCoreModule } from '@agm/core';
     TermComponent,
     NewsComponent,
     ConfirmComponent,
-    QuestionComponent
+    QuestionComponent,
+    SitemapComponent
   ],
   providers: [
     appRoutingProviders,

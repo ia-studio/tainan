@@ -50,7 +50,9 @@ export class FaqComponent implements OnInit {
   getReply(organNo: string, seqNo: number){
        this.faqService
         .getReply(organNo, seqNo)
-        .subscribe(reply => { this.reply = reply, window.scrollTo(0, 0) });
+        .subscribe(reply => {
+          this.reply = reply, window.scrollTo(0, 0);
+        });
   }
 
   getCategories() {

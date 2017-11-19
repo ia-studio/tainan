@@ -12,6 +12,7 @@ import { FeedbackComponent }            from './feedback/feedback.component';
 import { TermComponent }                from './term/term.component';
 import { ConfirmComponent }             from './confirm/confirm.component';
 import { QuestionComponent }            from './question/question.component';
+import { SitemapComponent }            from './sitemap/sitemap.component';
 
 const appRoutes: Routes = [
   {
@@ -46,6 +47,10 @@ const appRoutes: Routes = [
   {
     path: 'faq/:page',
     component: FaqComponent
+  },
+  {
+    path: 'sitemap',
+    component: SitemapComponent
   },
   {
     path: '**',

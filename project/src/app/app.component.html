@@ -4,6 +4,7 @@
             <ul class="other-links">
               <li><a href="./">首頁</a><small>|</small></li>
               <li><a href="./" target="_blank">派工案件查詢</a><small>|</small></li>
+              <li><a [routerLink]="['/sitemap']">網站地圖</a><small>|</small></li>
               <li><a href="http://www.tainan.gov.tw/tainan/" target="_blank">台南市政府全球資訊網</a></li>
             </ul>
             <h1 class="header-band">
@@ -20,7 +21,6 @@
                     <li class="menu-item" routerLinkActive="active"><a [routerLink]="['/process']">服務流程</a></li>
                     <li class="menu-item" routerLinkActive="active"><a [routerLink]="['/faq', '1']">常見問題 FAQ</a></li>
                     <li class="menu-item" routerLinkActive="active"><a [routerLink]="['/feedback', 'point']">案件處理滿意度</a></li>
-                    <li class="menu-item"><a href="./" target="_blank">案件反應排行榜</a></li>
                     <li class="menu-item"><a href="./" target="_blank">廉政案件</a></li>
                     <li class="menu-item" (click)="showNews=!showNews"><a><i class="fa fa-bullhorn"></i></a></li>
                 </ul>

@@ -1,0 +1,25 @@
+.out-conatainer {
+  .article-header:after {
+    content: initial;
+  }
+  .article-header:before {
+    top: -29px;
+  }
+}
+.article-lable {
+  display: inline-block;
+}
+.article-lable.require:before{
+  content: "";
+  background: #B7851C;
+  opacity: .3;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  height: 8px;
+  width: 40px;
+}
+.article-lable.require:after {
+  content: "";
+  display: table;
+}
