@@ -626,8 +626,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var FaqService = (function () {
     function FaqService(http) {
         this.http = http;
-        this.categoryUrl = 'http://soweb.kcg.gov.tw/webapi/api/category';
-        this.faqUrl = 'http://soweb.kcg.gov.tw/webapi/api/faqqry/';
+        this.categoryUrl = 'https://soweb.kcg.gov.tw/webapi/api/category';
+        this.faqUrl = 'https://soweb.kcg.gov.tw/webapi/api/faqqry/';
     }
     FaqService.prototype.getCategories = function () {
         return this.http.get(this.categoryUrl)
