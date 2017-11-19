@@ -110,35 +110,4 @@
   padding: 10px 15px;
   box-shadow: 0 -4px rgba(0,0,0,.2) inset;
 }
-.files{
-  display: inline-block;
-  background: #4A90E2;
-  color: white;
-  padding: 5px 10px;
-  margin-left: 10px;
-  border-radius: 3px;
-  box-shadow: 3px 0 0 0 rgba(0,0,0,.3) inset;
-  width: 200px;
-  text-overflow: ellipsis;
-  white-space : nowrap;
-  overflow: hidden;
-}
-.files-rule{
-  background: rgba(0,0,0,.03);
-  display: inline-block;
-  border-radius: 3px;
-  padding: 15px;
-  color: #2d3b50;
-}
-agm-map {
-    height: 300px;
-}
-.pop {
-  z-index: 9999;
-}
-.pop-content {
-  transform: translate(-50%,-40%);
-  width: 50%;
-  height: 100vh;
-}
 

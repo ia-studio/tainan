@@ -5,15 +5,7 @@ import { Title }             from '@angular/platform-browser';
 @Component({
   selector: 'app-term',
   templateUrl: 'term.component.html',
-  styles: [`
-  @media screen and (min-width:768px){
-       .fixed-list {
-          position: fixed;
-          z-index: 3;
-          top: 20px;
-        }
-      }
-  `]
+  styleUrls: ['term.component.scss']
 })
 export class TermComponent implements OnInit {
   scrollPosition : number;

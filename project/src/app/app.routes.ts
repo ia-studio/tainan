@@ -31,14 +31,22 @@ const appRoutes: Routes = [
     path: 'query',
     component: QueryComponent
   },
-  // {
-  //   path: 'query/:id',
-  //   component: QueryDetailComponent
-  // },
-  // {
-  //   path: 'term/:lable',
-  //   component: TermComponent
-  // },
+  {
+    path: 'term/:lable',
+    component: TermComponent
+  },
+  {
+    path: 'process',
+    component: ProcessComponent
+  },
+  {
+    path: 'faq',
+    component: FaqComponent
+  },
+  {
+    path: 'faq/:page',
+    component: FaqComponent
+  },
   {
     path: '**',
     component: ReportComponent
@@ -48,18 +56,7 @@ const appRoutes: Routes = [
   //   component: NewsComponent
   // },
 
-  // {
-  //   path: 'process',
-  //   component: ProcessComponent
-  // },
-  // {
-  //   path: 'faq',
-  //   component: FaqComponent
-  // },
-  // {
-  //   path: 'faq/:page',
-  //   component: FaqComponent
-  // },
+
   // {
   //   path: 'faq/:organNo/:seqNo',
   //   component: FaqDetailComponent
