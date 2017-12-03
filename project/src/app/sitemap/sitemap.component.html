@@ -24,9 +24,9 @@
             </div>
             <div class="article-content">
               <ul class="navy">
-                <li><a>市長信箱</a></li>
-                <li><a>案件查詢</a></li>
-                <li><a>案件處理滿意度</a></li>
+                <li><a [routerLink]="['/report']">市長信箱</a></li>
+                <li><a [routerLink]="['/query']">案件查詢</a></li>
+                <li><a [routerLink]="['/feedback','point']">案件處理滿意度</a></li>
               </ul>
             </div>
           </div>
@@ -38,12 +38,11 @@
             </div>
             <div class="article-content">
                 <ul class="navy">
-                    <li><a>常見問題 ＦＡＱ</a></li>
-                    <li><a>服務流程</a></li>
-                    <li><a>隱私權保護政策</a></li>
-                    <li><a>網路安全政策</a></li>
-                    <li><a>著作權聲明</a></li>
-                    <li><a>最新消息</a></li>
+                    <li><a [routerLink]="['/faq',1]">常見問題 ＦＡＱ</a></li>
+                    <li><a [routerLink]="['/process']">服務流程</a></li>
+                    <li><a [routerLink]="['/term', 'privacy']">隱私權保護政策</a></li>
+                    <li><a [routerLink]="['/term', 'security']">網路安全政策</a></li>
+                    <li><a [routerLink]="['/term', 'copyrighter']">著作權聲明</a></li>
                   </ul>
             </div>
           </div>
@@ -51,16 +50,12 @@
 
           <div class="col-md-4 page-block">
             <div class="article-header text-center">
-              <h4 id="mayor" class="article-title">連外服務</h4>
+              <h4 id="mayor" class="article-title">其他服務</h4>
             </div>
             <div class="article-content">
                 <ul class="navy">
-                    <li><a>廉政案件</a></li>
-                    <li><a>派工案件查詢</a></li>
-                    <li><a>台南政府全球資訊網</a></li>
-                    <li><a>網路安全政策</a></li>
-                    <li><a>著作權聲明</a></li>
-                    <li><a>最新消息</a></li>
+                    <li><a [routerLink]="['/aac']">廉政案件</a></li>
+                    <li><a href="http://www.tainan.gov.tw/tainan/">站外-台南政府全球資訊網</a></li>
                   </ul>
 
             </div>

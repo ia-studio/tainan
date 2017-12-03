@@ -40,6 +40,7 @@ export class CaseContent {
     source_id: any;
     secu_id: any;
     Security: string;
+    AssignDate: string;
     Source: string;
     Atth_FileNames: Attachment[];
 }

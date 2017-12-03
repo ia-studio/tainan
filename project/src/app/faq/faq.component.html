@@ -54,7 +54,7 @@
               <div class="col-md-6 navy">
                   <a href="javascript:void(0)" (click)="getReply(item.OrganNo, item.SeqNo)">{{item.CaseContent}}</a>
                   <span class="faq-open pull-right hidden-md hidden-lg" (click)="item.active=!item.active">
-                    <i class="fa fa-plus" [ngClass]="{active:item.active}"></i>
+                    <i class="fa fa-chevron-down" [ngClass]="{active:item.active}"></i>
                   </span>
                 </div>
                 <div class="col-md-2 text-black">{{item.OrganName}}</div>

@@ -23,6 +23,8 @@ import { QuestionComponent } from './question/question.component';
 import { environment } from '../environments/environment';
 import { AgmCoreModule } from '@agm/core';
 import { SitemapComponent } from './sitemap/sitemap.component';
+import { AacComponent } from './aac/aac.component';
+import { CaseRankComponent } from './case-rank/case-rank.component';
 
 @NgModule({
   imports: [
@@ -50,7 +52,9 @@ import { SitemapComponent } from './sitemap/sitemap.component';
     NewsComponent,
     ConfirmComponent,
     QuestionComponent,
-    SitemapComponent
+    SitemapComponent,
+    AacComponent,
+    CaseRankComponent
   ],
   providers: [
     appRoutingProviders,

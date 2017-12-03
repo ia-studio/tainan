@@ -92,11 +92,11 @@ color: white;
 
 .header-menu {
   position: relative;
-  width: 115%;
+  width: 100%;
   font-size: 1.125em;
   list-style: none;
   margin-bottom: 0;
-  padding-left: 140px;
+  padding-left: 180px;
   top: 30px;
   text-align: right;
   @media screen and (max-width: 1024px) {
@@ -131,10 +131,6 @@ color: white;
   border-style: solid;
   opacity: 0;
 
-}
-.menu-item:last-child:after,
-.menu-item:last-child:before{
-  content: initial;
 }
 .menu-item:before{
   top: -5px;

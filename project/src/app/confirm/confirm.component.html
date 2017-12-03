@@ -1,41 +1,64 @@
-  <div class="row" style="height:100vh">
+<div class="index-header">
+  <div class="big-header big-header--back"></div>
+  <div class="big-header container">
+    <div class="banner-page-name">
+      <p>Confirm</p>
+      <h2 class="page-title">案件確認信</h2>
+    </div>
+  </div>
+</div>
 
-     <div class="pop" style="display:block;">
-        <div class="pop-content fat-content">
-          <div class="check">
-            <div class="check-panel">
-              <div class="check-mark"><i class="fa fa-check"></i></div>
-              <h4 class="check-title navy text-center">親愛的網友，您好！</h4>
-              <br>
-              <div *ngIf="!queryExist">
-                <p>有事嗎？</p>
+<div class="body">
+  <div class="container shadow-3d">
+    <div class="out-conatainer row">
+      <div class="article-header text-center">
+        <h1 id="mayor" class="article-title"></h1>
+      </div>
+    </div>
+    <div class="row pdLR1x body-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 page-block">
+            <div class="article-content">
+              <div id="privacy" class="article-header">
+                <h4 class="article-title">親愛的網友，您好！</h4>
               </div>
-              <div *ngIf="queryExist">
-                <div class="check-info navy" *ngIf="key === 'caseNo'">
-                  <p class="text-center">您已經確認過並且在辦理中<br>您的申報案號是</p>
-                  <h2 class="text-center">{{val}}</h2>
+              <div>
+                <div *ngIf="!queryExist">
+                  <p>您的網址無效？</p>
                 </div>
-                <div class="check-info navy" *ngIf="key === 'firstConfirm'">
-                  已經確認成功！<br>系統後續將自動寄出案件編號至您的申報所填寫的信箱並立即進行分案處理。
+                <div *ngIf="queryExist">
+                  <div class="check-info navy" *ngIf="key === 'caseNo'">
+                    <p class="text-center">您已經確認過並且在辦理中
+                      <br>您的申報案號是
+                    </p>
+                    <h2 class="text-center">{{val}}</h2>
+                  </div>
+                  <div class="check-info navy" *ngIf="key === 'firstConfirm'">
+                    已經確認成功！
+                    <br>系統後續將自動寄出案件編號至您的申報所填寫的信箱並立即進行分案處理。
+                  </div>
+                  <div class="check-info navy" *ngIf="key === 'dateTime'">
+                    <p>已經完成確認，第一次確認時間如下： </p>
+                    <h4>{{getdate()}}</h4>
+                  </div>
+                  <div class="check-info navy" *ngIf="key === 'error'">
+                    Sorry，確認案件失敗！
+                    <br> {{val}}
+                  </div>
+                  <br>
+                  <br>
                 </div>
-                <div class="check-info navy" *ngIf="key === 'dateTime'">
-                  <p>已經完成確認，第一次確認時間如下： </p>
-                  <h4>{{getdate()}}</h4>
-                </div>
-                <div class="check-info navy" *ngIf="key === 'error'">
-                  Sorry，確認案件失敗！<br>
-                  {{val}}
-                </div>
-                <br>
-                <br>
+
+                <h4>台南市政府市長信箱處理小組 敬上</h4>
               </div>
 
-              <h4 class="check-footer navy text-center">台南市政府市長信箱處理小組 敬上</h4>
-              <a href="./" class="btn btn-green" >我瞭解了</a>
             </div>
+
           </div>
         </div>
+
       </div>
+    </div>
   </div>
-
-
+</div>

@@ -8,7 +8,7 @@ import * as moment           from 'moment';
   selector: 'app-feedback',
   templateUrl: 'feedback.component.html',
   providers: [FeedbackService],
-  styleUrls: ['feedback.component.css']
+  styleUrls: ['feedback.component.scss']
 })
 export class FeedbackComponent implements OnInit {
 
@@ -19,6 +19,7 @@ export class FeedbackComponent implements OnInit {
   startDate: string;
   endDate: string;
   errorMsg: string;
+  showloading: boolean;
 
   public constructor(private route: ActivatedRoute, private titleService: Title, private feedbackService: FeedbackService) { }
 
@@ -31,7 +32,11 @@ export class FeedbackComponent implements OnInit {
     this.feedbackService
         .getPointFeedback(moment(this.startDate).format('YYYYMMDD'), moment(this.endDate).format('YYYYMMDD'))
         .subscribe(
-          feedbacks => { this.feedbacks = feedbacks, this.errorMsg = '' },
+          feedbacks => {
+            this.feedbacks = feedbacks;
+            this.errorMsg = '';
+            this.showloading = false;
+           },
           error => { this.feedbacks = {}, this.errorMsg = error });
   }
 
@@ -40,7 +45,10 @@ export class FeedbackComponent implements OnInit {
     this.feedbackService
         .getCountFeedback(moment(this.startDate).format('YYYYMMDD'), moment(this.endDate).format('YYYYMMDD'))
         .subscribe(
-          feedbacks => { this.feedbacks = feedbacks, this.errorMsg = '' },
+          feedbacks => {
+            this.feedbacks = feedbacks;
+            this.errorMsg = '';
+            this.showloading = false; },
           error => { this.feedbacks = {}, this.errorMsg = error });
   }
 
@@ -49,11 +57,16 @@ export class FeedbackComponent implements OnInit {
     this.feedbackService
         .getEffectiveFeedback(moment(this.startDate).format('YYYYMMDD'), moment(this.endDate).format('YYYYMMDD'))
         .subscribe(
-          feedbacks => { this.feedbacks = feedbacks, this.errorMsg = '' },
-          error => { this.feedbacks = {}, this.errorMsg = error });
+          feedbacks => {
+            this.feedbacks = feedbacks;
+            this.errorMsg = '';
+            this.showloading = false;
+          },
+          error => { this.feedbacks = {}; this.errorMsg = error });
   }
 
   getFeedback(type: string){
+    this.showloading = true;
     this.feedbacks = {};
     switch (type){
       case 'effective':
@@ -78,22 +91,22 @@ export class FeedbackComponent implements OnInit {
     let bg : string;
     switch (idx){
       case 0:
-        bg = 'bg-green-darken';
+        bg = 'bg-main-darken';
       break;
       case 1:
-        bg = 'bg-green-lighten';
+        bg = 'bg-main-lighten';
       break;
       case 2:
-        bg = 'bg-green';
+        bg = 'bg-second';
       break;
       case 3:
-        bg = 'bg-orange-lighten';
+        bg = 'bg-second-lighten';
       break;
       case 4:
-        bg = 'bg-orange-darken';
+        bg = 'bg-support-darken';
       break;
       case 5:
-        bg = 'bg-orange-darken-2';
+        bg = 'bg-support-darken-2';
       break;
 
     }

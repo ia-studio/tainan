@@ -1,0 +1,95 @@
+<div class="index-header">
+  <div class="big-header big-header--back"></div>
+  <div class="big-header container">
+    <div class="banner-page-name">
+      <p>Case Rank</p>
+      <h2 class="page-title">案件
+        <br>反應排行榜</h2>
+    </div>
+  </div>
+</div>
+
+<div class="body" *ngIf="faqs && !reply">
+  <div class="container shadow-3d">
+    <div class="out-conatainer row">
+      <div class="article-header text-center">
+        <h1 id="mayor" class="article-title"></h1>
+      </div>
+    </div>
+    <div class="pdLR2x body-content">
+      <div class="search active">
+        <form class="row">
+          <div class="col-md-4 combine-icon combine-after">
+            <p class="article-lable require">排列方式 </p>
+            <input class="fall-width" type="text" [value]="selectedCategory.text" readonly>
+            <select name="" id="" class="input-alpha" (change)="changeCategory(selectedCategory,$event.target)">
+              <option value="0">機關</option>
+              <option value="1">主項</option>
+              <option value="2">子項</option>
+            </select>
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <div class="col-md-4 combine-icon combine-after">
+            <p class="article-lable require">顯示期間 </p>
+            <input class="fall-width" type="text" [value]="selectedDateRange.text" readonly>
+            <select name="" id="" class="input-alpha" (change)="changeCategory(selectedDateRange,$event.target)">
+              <option value="0">上週</option>
+              <option value="1">上月</option>
+              <option value="2">上季</option>
+              <option value="3">去年</option>
+              <option value="4">自選</option>
+            </select>
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <div class="clearfix"></div>
+          <div class="row block-separate" *ngIf="selectedDateRange.value === '4'">
+            <div class="col-md-4 maT1x">
+              <span>起日：</span>
+              <input class="fall-width" type="date" [(ngModel)]="startDate">
+            </div>
+            <div class="col-md-4 maT1x">
+              <span>迄日：</span>
+              <input class="fall-width" type="date" [(ngModel)]="endDate">
+            </div>
+            <div class="col-md-4">
+              <span>&nbsp;&nbsp;&nbsp;</span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="col-md-3 maT1x">
+            <button class="search-btn" (click)="search()">查詢</button>
+          </div>
+          <br>
+        </form>
+      </div>
+      <div class="article-content">
+        <div class="faq maB2x row">
+          <div class="faq-head col-md-12 hidden-xs hidden-sm">
+            <div class="row">
+              <div class="col-xs-1">序號</div>
+              <div class="col-xs-7">子項</div>
+              <div class="col-xs-4">件數</div>
+            </div>
+          </div>
+          <div class="faq-item col-md-12" [ngClass]="{active:item.active}" *ngFor="let item of caserank">
+            <div class="row">
+              <div class="col-xs-1 navy">
+                {{item.id}}
+              </div>
+              <div class="col-xs-7 text-black">{{item.content}}</div>
+              <div class="col-xs-4 text-black">{{item.num}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="faqs.length===0&&!isSearch" class="pop" style="display:block;">
+  <div class="pop-content">
+    <div class="mk-spinner-doublecircle"></div>
+    <span class="loading-words">Loading ...</span>
+  </div>
+</div>

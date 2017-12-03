@@ -9,7 +9,7 @@ import { UploadService } from './upload.service';
 import { AreaService } from './area.service';
 
 import {
-  DistrictCodesKaohsiung, RegionCodesKaohsiung, CountyCodes, District, County, Region,
+  DistrictCodes, CountyCodes, District, County, Region,
   validateEmail,
   checkFilesSize, checkTotalFilesSize, checkFileName, checkExtName, checkFilenameIsExist, joinUploadedFileName,
   genCaseToken,
@@ -88,7 +88,7 @@ export class ReportDetailComponent implements OnInit, OnDestroy {
 
   ) {
     this.Case_Token = genCaseToken(12);
-    this.areaCodes = DistrictCodesKaohsiung(true); // 左側行政區 gps
+    this.areaCodes = DistrictCodes(true); // 左側行政區 gps
     this.districtCodes = []; // 右側行政區下拉項目
     this.Subj_District = ''; // default
     this.countyCodes = CountyCodes();
@@ -372,20 +372,12 @@ export class ReportDetailComponent implements OnInit, OnDestroy {
     this.Sugg_Addr2 = s.value;
     this.Sugg_Addr2_name = this.getDropdownName(s);
 
-    //高雄區
-    if (s.value.indexOf('640') === 0){
-      this.regionCodes = RegionCodesKaohsiung(s.value);
-    }
-    else if (s.value && s.value.length === 10 && s.value.indexOf('640') === -1){
-      this.subscribes.push(
-        this.areaService.getRegions(s.value).subscribe(
-          data => this.regionCodes = data
-        )
-      );
-    }
-    else {
-      this.regionCodes = [];
-    }
+    this.subscribes.push(
+      this.areaService.getRegions(s.value).subscribe(
+        data => this.regionCodes = data
+      )
+    );
+
   }
 
   // 右側 里選擇
@@ -399,7 +391,7 @@ export class ReportDetailComponent implements OnInit, OnDestroy {
     this.Sugg_Addr1_name = this.getDropdownName(s);
     this.Sugg_Addr1 = s.value;
     if (s.value === '6400000000'){ // 台南市，則不使用 api 取行政區內容
-      this.districtCodes = DistrictCodesKaohsiung();
+      this.districtCodes = DistrictCodes();
     }
     else if (s.value.length === 10 && s.value !== '6400000000'){
       this.subscribes.push(

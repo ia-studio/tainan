@@ -10,38 +10,47 @@
             <div class="row">
                 <div class="col-md-4 page-block maB2x">
                     <div class="article-content">
-                        <p class="article-lable require" *ngIf="searchCase.Content[0].source_id !== '0'">主旨</p>
-                        <p class="navy maB2x" *ngIf="searchCase.Content[0].source_id !== '0'">{{searchCase.Content[0].e_subject}}</p>
-                        <p class="article-lable require">建議事項</p>
-                        <p class="navy maB2x">{{searchCase.Content[0].subject}}</p>
                         <div class="row">
                             <div class="col-md-6">
-                                <p class="article-lable require">收件編號</p>
+                                <p class="article-lable require">案件編號</p>
                                 <p class="navy maB2x pdLHalfX">
-                                  <span *ngIf="searchCase.Content[0].source_id === '0'">
+                                  <span *ngIf="searchCase.Content[0].Source === ' 網頁'">
                                     {{searchCase.Content[0].case_no1+'-'+searchCase.Content[0].case_no4}}
                                   </span>
-                                  <span *ngIf="searchCase.Content[0].source_id === '1'">
+                                  <span *ngIf="searchCase.Content[0].Source !== ' 網頁'">
                                     {{searchCase.Content[0].case_no1+'-'+searchCase.Content[0].case_no2+'-'+searchCase.Content[0].case_no3+'-'+searchCase.Content[0].case_no4}}
                                   </span>
                                   </p>
-                                <p class="article-lable require">來源別</p>
-                                <p class="navy maB2x pdLHalfX">{{searchCase.Content[0].Source}}</p>
+                                <div *ngIf="searchCase.Content[0].Source === ' 網頁'">
+                                  <p class="article-lable require">來源別</p>
+                                  <p class="navy maB2x pdLHalfX">{{searchCase.Content[0].Source}}</p>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <p class="article-lable require">時間</p>
-                                <p class="navy maB2x pdLHalfX">
-                                  <span *ngIf="searchCase.Content[0].source_id === '1'">
-                                    {{searchCase.Content[0].subj_date}}
-                                  </span>
-                                  <span *ngIf="searchCase.Content[0].source_id === '0'">
-                                    {{searchCase.Content[0].subj_time}}
-                                  </span>
-                                </p>
-                                <p class="article-lable require">機密等級</p>
-                                <p class="navy maB2x pdLHalfX">{{searchCase.Content[0].Security}}</p>
+                                <div *ngIf="searchCase.Content[0].Source == ' 網頁'">
+                                    <p class="article-lable require">時間</p>
+                                    <p class="navy maB2x pdLHalfX">
+                                        <span>
+                                          {{searchCase.Content[0].subj_time}}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div *ngIf="searchCase.Content[0].Source !== ' 網頁'">
+                                    <p class="article-lable require">日期</p>
+                                    <p class="navy maB2x pdLHalfX">
+                                        <span>
+                                          {{searchCase.Content[0].subj_date}}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div *ngIf="searchCase.Content[0].Source === ' 網頁'">
+                                    <p class="article-lable require">機密等級</p>
+                                    <p class="navy maB2x pdLHalfX">{{searchCase.Content[0].Security}}</p>
+                                </div>
                             </div>
                         </div>
+                        <p class="article-lable require">主旨</p>
+                        <p class="navy maB2x">{{searchCase.Content[0].subject}}</p>
                         <div *ngIf="searchCase.Content[0].Atth_FileNames && searchCase.Content[0].Atth_FileNames.length > 0">
                           <p class="article-lable require">附加檔案 </p>
                           <p class="navy maB2x pdLHalfX">
@@ -62,8 +71,14 @@
                         <div *ngFor="let item of searchCase.ProcessStatus" aria-describedby="searchCase.ProcessStatus">
                           <div class="row">
                             <div class="col-md-6">
-                              <p class="article-lable require">陳情類別(主項)</p>
-                              <p class="navy maB2x pdLHalfX">{{item.item_name}}</p>
+                              <div *ngIf="searchCase.Content[0].Source === ' 網頁'">
+                                <p class="article-lable require">陳情類別(主項)</p>
+                                <p class="navy maB2x pdLHalfX">{{item.item_name}}</p>
+                              </div>
+                              <div *ngIf="searchCase.Content[0].Source !== ' 網頁'">
+                                  <p class="article-lable require">分文日期</p>
+                                  <p class="navy maB2x pdLHalfX">{{item.AssignDate}}</p>
+                                </div>
                               <p class="article-lable require">承辦機關</p>
                               <p class="navy maB2x pdLHalfX">{{item.organ_name}}</p>
                               <p class="article-lable require">序號</p>
@@ -72,8 +87,14 @@
                               <p class="navy maB2x pdLHalfX">{{item.undertaker}}</p>
                             </div>
                             <div class="col-md-6">
-                              <p class="article-lable require">陳情類別(子項)</p>
-                              <p class="navy maB2x pdLHalfX">{{item.sub_itemname}}</p>
+                              <div *ngIf="searchCase.Content[0].Source === ' 網頁'">
+                                <p class="article-lable require">陳情類別(子項)</p>
+                                <p class="navy maB2x pdLHalfX">{{item.sub_itemname}}</p>
+                              </div>
+                              <div *ngIf="searchCase.Content[0].Source !== ' 網頁'">
+                                  <p class="article-lable require">管制別</p>
+                                  <p class="navy maB2x pdLHalfX">{{item.CtrlId_Desc}}</p>
+                                </div>
                               <p class="article-lable require">科室</p>
                               <p class="navy maB2x pdLHalfX">{{item.dept_name}}</p>
                               <p class="article-lable require">完成日期 </p>

@@ -3,7 +3,6 @@
         <nav class="header row index">
             <ul class="other-links">
               <li><a href="./">首頁</a><small>|</small></li>
-              <li><a href="./" target="_blank">派工案件查詢</a><small>|</small></li>
               <li><a [routerLink]="['/sitemap']">網站地圖</a><small>|</small></li>
               <li><a href="http://www.tainan.gov.tw/tainan/" target="_blank">台南市政府全球資訊網</a></li>
             </ul>
@@ -11,7 +10,7 @@
                 <a href='./'>
                   <img calss="pull-left" src="./assets/images/index/logo.svg" width="100%" alt="">
                 </a>
-                <div class="news" [class.active]="showNews" (click)="showNews=!showNews"><a href="javascript:void(0)"><i class="fa fa-bullhorn"></i></a></div>
+                <!-- <div class="news" [class.active]="showNews" (click)="showNews=!showNews"><a href="javascript:void(0)"><i class="fa fa-bullhorn"></i></a></div> -->
                 <div class="mob-menu" [class.active]="showSlideMenu" (click)="showSlideMenu=!showSlideMenu"></div>
             </h1>
             <div class="header-right">
@@ -20,12 +19,13 @@
                     <li class="menu-item" routerLinkActive="active"><a [routerLink]="['/query']">案件查詢</a></li>
                     <li class="menu-item" routerLinkActive="active"><a [routerLink]="['/process']">服務流程</a></li>
                     <li class="menu-item" routerLinkActive="active"><a [routerLink]="['/faq', '1']">常見問題 FAQ</a></li>
+                    <li class="menu-item" routerLinkActive="active"><a [routerLink]="['/caseRank']">案件反應排行榜</a></li>
                     <li class="menu-item" routerLinkActive="active"><a [routerLink]="['/feedback', 'point']">案件處理滿意度</a></li>
-                    <li class="menu-item"><a href="./" target="_blank">廉政案件</a></li>
-                    <li class="menu-item" (click)="showNews=!showNews"><a><i class="fa fa-bullhorn"></i></a></li>
+                    <li class="menu-item"><a [routerLink]="['/aac']">廉政案件</a></li>
+
                 </ul>
             </div>
-            <div class="header-news" *ngIf="showNews">
+            <!-- <div class="header-news" *ngIf="showNews">
                 <div class="news-visble">
                   <ul class="news-list">
                     <li [ngClass]="{'active':showNowNews(i)}" *ngFor="let newsItem of news; let i = index">
@@ -34,7 +34,7 @@
                   </ul>
                   <span class="pull-right" (click)="showNews=false"><i class="fa fa-times-circle"></i></span>
                 </div>
-            </div>
+            </div> -->
         </nav>
     </div>
     <router-outlet></router-outlet>
@@ -68,29 +68,21 @@
         <li class="m-item " routerLinkActive="active" (click)="showSlideMenu=false"><a [routerLink]="['/query']">案件查詢</a></li>
         <li class="m-item " routerLinkActive="active" (click)="showSlideMenu=false"><a [routerLink]="['/process']">服務流程</a></li>
         <li class="m-item " routerLinkActive="active" (click)="showSlideMenu=false"><a [routerLink]="['/faq', '1']">常見問題 FAQ</a></li>
+        <li class="m-item " routerLinkActive="active" (click)="showSlideMenu=false"><a [routerLink]="['/caseRank']">案件反應排行榜</a></li>
+
         <li class="m-item " (click)="showSlideMenu=false"><a [routerLink]="['/feedback', 'point']">案件處理滿意度</a>
             <ul class="mob-sub-menu">
-                <li class="m-item" routerLinkActive="active"><a [routerLink]="['/feedback', 'point']">各項滿意度調查</a></li>
-                <li class="m-item" routerLinkActive="active"><a [routerLink]="['/feedback', 'count']">各問題次數分配表</a></li>
-                <li class="m-item" routerLinkActive="active"><a [routerLink]="['/feedback', 'effective']">各問題有效值與遺漏值</a></li>
+                <li class="m-item" routerLinkActive="active" (click)="showSlideMenu=false"><a [routerLink]="['/feedback', 'point']">各項滿意度調查</a></li>
+                <li class="m-item" routerLinkActive="active" (click)="showSlideMenu=false"><a [routerLink]="['/feedback', 'count']">各問題次數分配表</a></li>
+                <li class="m-item" routerLinkActive="active" (click)="showSlideMenu=false"><a [routerLink]="['/feedback', 'effective']">各問題有效值與遺漏值</a></li>
             </ul>
         </li>
-
+        <li class="m-item"><a [routerLink]="['/aac']">廉政案件</a></li>
         <li class="m-item"><a [routerLink]="['/term','privacy']" (click)="showSlideMenu=false">隱私權保護政策</a></li>
         <li class="m-item"><a [routerLink]="['/term','security']" (click)="showSlideMenu=false">網站安全政策</a></li>
         <li class="m-item"><a [routerLink]="['/term','copyright']" (click)="showSlideMenu=false">著作權聲明</a></li>
         <li class="m-item"><a [routerLink]="['/term','copyright']" target="blank">網站導覽</a></li>
+        <li class="m-item"><a href="http://www.tainan.gov.tw/tainan/" target="blank">台南市政府全球資訊網</a></li>
 
-    </ul>
-    <br>
-    <br>
-    <br>
-    <br>
-    <small >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;站外連結</small>
-    <ul class="m-list active">
-      <li class="m-item"><a href="./" target="_blank">案件反應排行榜</a></li>
-      <li class="m-item"><a href="./" target="_blank">廉政案件</a></li>
-      <li class="m-item"><a href="./" target="_blank">派工案件查詢</a></li>
-      <li class="m-item"><a href="http://www.tainan.gov.tw/tainan/" target="blank">台南市政府全球資訊網</a></li>
     </ul>
 </div>
