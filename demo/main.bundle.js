@@ -1222,9 +1222,9 @@ var FeedbackService = (function () {
     function FeedbackService(http) {
         this.http = http;
         this.mock = false;
-        this.pointFeedbackUrl = this.mock ? 'assets/pointFeedback.json' : 'http://soweb.kcg.gov.tw/webapi/api/satPool/1';
-        this.countFeedbackUrl = this.mock ? 'assets/countFeedback.json' : 'http://soweb.kcg.gov.tw/webapi/api/satPool/2';
-        this.effectiveFeedbackUrl = this.mock ? 'assets/effectiveFeedback.json' : 'http://soweb.kcg.gov.tw/webapi/api/satPool/3';
+        this.pointFeedbackUrl = this.mock ? 'assets/pointFeedback.json' : 'https://soweb.kcg.gov.tw/webapi/api/satPool/1';
+        this.countFeedbackUrl = this.mock ? 'assets/countFeedback.json' : 'https://soweb.kcg.gov.tw/webapi/api/satPool/2';
+        this.effectiveFeedbackUrl = this.mock ? 'assets/effectiveFeedback.json' : 'https://soweb.kcg.gov.tw/webapi/api/satPool/3';
     }
     FeedbackService.prototype.getPointFeedback = function (startDate, endDate) {
         return this.http.get(this.pointFeedbackUrl + '?qBegDate=' + startDate + '&qEndDate=' + endDate)
